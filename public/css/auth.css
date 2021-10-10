@@ -1,0 +1,22 @@
+body {
+    background-color: #111;
+    color: #fff;
+}
+
+.content {
+    position: absolute;
+    top: 60px;left: 30%;right: 30%;
+}
+.content .logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.content .logo img {
+    width: 40%;
+}
+.content form {
+    background-color: #fff;
+    color: #444;
+    padding: 1px;
+    border-radius: 6px;
+}
