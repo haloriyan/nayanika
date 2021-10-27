@@ -2,8 +2,8 @@
 
 @section('head.dependencies')
 <style>
-    .aboveTheFold h2 {
-        padding-bottom: 120px;
+    .aboveTheFold h3 {
+        padding-bottom: 60px;
         border-bottom: 2px solid #fff;
     }
 </style>
@@ -11,7 +11,7 @@
 
 @section('content')
 <div class="aboveTheFold rata-tengah">
-    <h2>ABOUT US</h2>
+    <h3 class="judul">ABOUT US</h3>
 </div>
 
 <section class="rata-tengah">

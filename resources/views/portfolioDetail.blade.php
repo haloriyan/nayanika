@@ -27,7 +27,7 @@
     <h2>{{ $portfolio->title }}</h2>
 </div>
 
-<div class="main-cover tinggi-600 rounded mt-4" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->featured_image) }}"></div>
+<div class="main-cover squarize rectangle rounded mt-4" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->featured_image) }}"></div>
 
 <div class="tinggi-60"></div>
 <div class="bagi bagi-2 desktop">
@@ -39,16 +39,21 @@
 
 <div class="tinggi-60"></div>
 
+@isset($portfolio->images[0])
 <div class="bagi bagi-2">
     <div class="wrap">
-        <div class="cover tinggi-300 rounded" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[0]->filename) }}"></div>
+        <div class="cover squarize rectangle rounded" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[0]->filename) }}"></div>
     </div>
 </div>
+@endif
+
+@isset($portfolio->images[1])
 <div class="bagi bagi-2">
     <div class="wrap">
-        <div class="cover tinggi-300 rounded" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[1]->filename) }}"></div>
+        <div class="cover squarize rectangle rounded" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[1]->filename) }}"></div>
     </div>
 </div>
+@endif
 
 <div class="tinggi-60"></div>
 <div class="bagi bagi-2 desktop">

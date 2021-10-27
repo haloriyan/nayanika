@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="aboveTheFold">
-    <h2>TURNING YOUR IDEAS<br /> INTO MAGNIFICENT VISUALS</h2>
+    <h2>TURNING YOUR IDEAS INTO MAGNIFICENT VISUALS</h2>
     <div class="desktop">
         <section class="footer">
             <div class="bagi bagi-3">
@@ -36,27 +36,20 @@
 
 <div class="tinggi-160"></div>
 <section class="portfolio">
-    <h3>OUR WORK</h3>
+    <h3 class="judul">OUR WORK</h3>
     <div id="items">
-        @foreach ($portfolios as $portfolio)
-            @php
-                $portoCategories = explode(",", $portfolio->categories);
-            @endphp
-            <div class="item">
-                <div class="image" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->featured_image) }}"></div>
-                <div class="detail">
-                    <h4>{{ $portfolio->title }}</h4>
-                    @foreach ($portoCategories as $key => $category)
-                        <div class="tags">{{ $category }}</div>
-                    @endforeach
-                </div>
-            </div>
-        @endforeach
+        <div id="loadPortfolio"></div>
         
+        <br />
         <div class="item"></div>
         <div class="item">
-            <h4>
-                <a href="#">All Work <i class="ml-2 fas fa-link-external"></i></a>
+            <h4 class="pointer garis-bawah" id="loadMore" onclick="loadMore()">
+                Load More
+            </h4>
+            <h4 class="pointer d-none garis-bawah" id="toPortfolio">
+                <a href="{{ route('user.portfolio') }}">
+                    All Work <span class="icon-external-link-black custicon"></span>
+                </a>
             </h4>
         </div>
     </div>
@@ -74,7 +67,7 @@
             @foreach ($category->services as $service)
                 <div class="bagi bagi-4">
                     <div class="wrap">
-                        <div class="containerList" style="height: 150px;">
+                        <div class="containerList squarize" style="height: 150px;">
                             <div class="item">{{ $service->name }}</div>
                         </div>
                     </div>
@@ -97,4 +90,79 @@
 @include('./partials/CTA')
 @include('./partials/Footer')
 
+@endsection
+
+@section('javascript')
+<script>
+    let toLoad = 5;
+    let loadedDataId = [];
+
+    const loadPortfolio = () => {
+        let req = post("{{ route('api.portfolio.load') }}", {
+            count: toLoad
+        })
+        .then(res => {
+            let datas = res.datas;
+            if (datas.length < toLoad) {
+                console.log(datas);
+                select("#loadMore").classList.add('d-none');
+                select("#toPortfolio").classList.remove('d-none');
+            }
+            datas.forEach(portfolio => {
+                if (!inArray(portfolio.id, loadedDataId)) {
+                    createElement({
+                        el: "div",
+                        attributes: [
+                            ['class', 'portfolio-item']
+                        ],
+                        html: `<div class="bagi bagi-2 desktop">
+        <div class="wrap ml-0">
+            <a href="{{ route('user.portfolio.detail') }}/${portfolio.id}">
+                <div class="cover squarize rectangle rounded" bg-image="{{ asset('storage/portfolio_images') }}/${portfolio.featured_image}"></div>
+            </a>
+        </div>
+    </div>
+    <div class="bagi bagi-2 desktop detail">
+        <div class="ml-0 p-4">
+            <a href="{{ route('user.portfolio.detail') }}/${portfolio.id}">
+                <h3 class="sub-judul">${portfolio.title}
+                    <div class="custicon ke-kanan mt-1" size="30" icon="external-link-white"></div>
+                </h3>
+                <p>${portfolio.description}</p>
+            </a>
+            <div id="categoriesArea${portfolio.id}"></div>
+        </div>
+    </div>
+    <br />
+    <hr size="1" color="#fff" />`,
+                        createTo: '#loadPortfolio'
+                    });
+
+                    let categories = portfolio.categories.split(",");
+                    categories.forEach(category => {
+                        createElement({
+                            el: 'a',
+                            attributes: [
+                                ['href', `{{ route('user.portfolio') }}?category=${category}`]
+                            ],
+                            html: `<div class="category-item">${category}</div>`,
+                            createTo: `#categoriesArea${portfolio.id}`
+                        });
+                    });
+                }
+                loadedDataId.push(portfolio.id);
+            });
+            bindDivWithImage();
+            squarize();
+            custicon();
+            toggleLightMode(1);
+        });
+    }
+    loadPortfolio();
+
+    const loadMore = () => {
+        toLoad += 5;
+        loadPortfolio();
+    }
+</script>
 @endsection

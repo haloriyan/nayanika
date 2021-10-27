@@ -8,7 +8,7 @@ Route::get('pwd', function () {
 Route::get('/', "UserController@index")->name("user.index");
 Route::get('about-us', "UserController@about")->name("user.about");
 Route::get('portfolio', "UserController@portfolio")->name("user.portfolio");
-Route::get('portfolio/{id}', "UserController@portfolioDetail")->name("user.portfolio.detail");
+Route::get('portfolio/{id?}', "UserController@portfolioDetail")->name("user.portfolio.detail");
 Route::get('service', "UserController@service")->name("user.service");
 Route::post('service/send-message', "UserController@sendMessage")->name("user.service.sendMessage");
 Route::get('contact', "UserController@contact")->name("user.contact");

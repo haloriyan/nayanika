@@ -13,6 +13,9 @@
             <a href="{{ route('user.service') }}">
                 <li>WHAT WE DO</li>
             </a>
+            <a href="{{ route('user.service') }}">
+                <li class="mobile">GET IN TOUCH</li>
+            </a>
         </ol>
     </div>
 </nav>

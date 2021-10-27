@@ -70,6 +70,8 @@
                 <input type="text" class="box" name="title" id="title" required>
                 <div class="mt-2">Deskripsi :</div>
                 <textarea name="description" id="description" class="box" required></textarea>
+                <div class="mt-2">Task (Problem & Solve) :</div>
+                <textarea name="task" id="task" class="box" required></textarea>
                 <div class="mt-2">Featured Image :</div>
                 <input type="file" class="box withPreview mt-2" onchange="inputFile(this, '#addPortfolio .uploadArea')" name="featured_image" required>
                 <div class="uploadArea">
@@ -163,6 +165,7 @@
         select("#editPortfolio #title").value = data.title;
         select("#editPortfolio #categories").value = data.categories;
         select("#editPortfolio #description").value = data.description;
+        select("#editPortfolio #task").value = data.task;
         uploadArea.innerText = "";
         uploadArea.setAttribute('bg-image', `{{ asset('storage/portfolio_images') }}/${data.featured_image}`);
 

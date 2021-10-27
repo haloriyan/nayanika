@@ -15,6 +15,18 @@ class PortfolioController extends Controller
         }
         return Portfolio::where($filter);
     }
+    public function load(Request $request) {
+        $count = $request->count;
+        $category = $request->category;
+        $filter = [];
+
+        if ($category != "") {
+            $filter[] = ['categories', 'LIKE', "%".$category."%"];
+        }
+        $datas = Portfolio::where($filter)->take($count)->orderBy('created_at', 'DESC')->get();
+
+        return response()->json(['datas' => $datas]);
+    }
     public function store(Request $request) {
         $image = $request->file('featured_image');
         $imageFileName = $image->getClientOriginalName();

@@ -11,7 +11,8 @@
         display: inline-block;
         font-size: 80px;
         margin-top: -120px;
-        letter-spacing: 6px;
+        letter-spacing: 3px;
+        line-height: 20px;
         background-color: #111;
         padding-right: 45px;
         position: relative;
@@ -24,6 +25,6 @@
 
 <div class="tinggi-100"></div>
 @include('./partials/Footer', ['customContent' => "<h3>LET'S</h3><br />
-<h3>GET TO WORK</h3>"])
+<h3>GET TO WORK <i class='fas fa-external-link-alt ml-2'></i></h3>"])
 
 @endsection

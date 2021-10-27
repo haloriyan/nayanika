@@ -4,12 +4,24 @@
 
 @section('head.dependencies')
 <style>
+    .group {
+        position: relative;
+    }
+    label {
+        position: absolute;
+        top: 20px;left: 16px;
+        transition: 0.4s;
+    }
     input.box {
         background-color: #111;
         color: #fff;
         height: 40px;
+        box-shadow: none !important;
     }
-    input.box:focus { box-shadow: none; }
+    input.box:focus ~ label,input.box:valid ~ label {
+        top: -14px;left: 0px;
+        font-size: 15px;
+    }
     input.box.custom-lightMode {
         background-color: #fff;
         color: #111;
@@ -96,56 +108,33 @@
                         {{ $message }}
                     </div>
                 @endif
-                <div class="teks-besar">Fill in the field below and describe your needs. In return we will contact you and suggest solutions for your business needs.</div>
+                <div class="teks-besar mb-3">Fill in the field below and describe your needs. In return we will contact you and suggest solutions for your business needs.</div>
                 <input type="hidden" name="services" id="selectedServices">
                 <input type="hidden" name="alacartes" id="selectedAlaCartes">
-                <div class="mt-2">
-                    <div class="bagi lebar-30">
-                        <div class="mt-2">Your name :</div>
-                    </div>
-                    <div class="bagi lebar-70">
-                        <input type="text" class="box" name="name" required>
-                    </div>
+
+                <div class="mt-2 group">
+                    <input type="text" class="box" name="name" id="name" required>
+                    <label for="name">Your name :</label>
                 </div>
-                <div class="mt-2">
-                    <div class="bagi lebar-30">
-                        <div class="mt-2">Email :</div>
-                    </div>
-                    <div class="bagi lebar-70">
-                        <input type="email" class="box" name="email" required>
-                    </div>
+                <div class="mt-2 group">
+                    <input type="text" class="box" name="email" id="email" required>
+                    <label for="name">Email :</label>
                 </div>
-                <div class="mt-2">
-                    <div class="bagi lebar-30">
-                        <div class="mt-2">Phone number :</div>
-                    </div>
-                    <div class="bagi lebar-70">
-                        <input type="text" class="box" name="phone" required>
-                    </div>
+                <div class="mt-2 group">
+                    <input type="text" class="box" name="phone" id="phone" required>
+                    <label for="name">Phone number :</label>
                 </div>
-                <div class="mt-2">
-                    <div class="bagi lebar-30">
-                        <div class="mt-2">City :</div>
-                    </div>
-                    <div class="bagi lebar-70">
-                        <input type="text" class="box" name="city" required>
-                    </div>
+                <div class="mt-2 group">
+                    <input type="text" class="box" name="city" id="city" required>
+                    <label for="name">City :</label>
                 </div>
-                <div class="mt-2">
-                    <div class="bagi lebar-30">
-                        <div class="mt-2">Company :</div>
-                    </div>
-                    <div class="bagi lebar-70">
-                        <input type="text" class="box" name="company" required>
-                    </div>
+                <div class="mt-2 group">
+                    <input type="text" class="box" name="company" id="company" required>
+                    <label for="name">Company :</label>
                 </div>
-                <div class="mt-2">
-                    <div class="bagi lebar-30">
-                        <div class="mt-2">Industry field :</div>
-                    </div>
-                    <div class="bagi lebar-70">
-                        <input type="text" class="box" name="industry_field" required>
-                    </div>
+                <div class="mt-2 group">
+                    <input type="text" class="box" name="industry_field" id="industry_field" required>
+                    <label for="name">Industry field :</label>
                 </div>
             </div>
         </div>
