@@ -13,7 +13,7 @@
         margin-top: -120px;
         letter-spacing: 3px;
         line-height: 20px;
-        background-color: #111;
+        background-color: #000;
         padding-right: 45px;
         position: relative;
         top: -65px;

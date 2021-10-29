@@ -44,7 +44,7 @@ body {
 .opacity-05 { opacity: 0.5; }
 .wrap { margin: 5%; }
 .wrap.super { margin: 10%; }
-.wrap.small { margin: 2.5%; }
+.wrap.small { margin: 2%; }
 .bag-10 > .wrap { margin: 3.5% 5%; }
 h1,h2,h3,h4,h5,h6 {
     font-family: GrotesqueLight;
@@ -190,6 +190,7 @@ select.box:focus {
 .bayangan-1 { box-shadow: 1px 1px 1px 1px #ddd; }
 
 .rounded { border-radius: 5px; }
+.rounded-more { border-radius: 15px !important; }
 .rounded-none { border-radius: 0px; }
 .rounded-circle { border-radius: 999px; }
 .corner-top-left { border-top-left-radius: 6px; }
@@ -629,6 +630,10 @@ input[type=file].withPreview {
     .desktop { display: none; }
     .mobile { display: block; }
     .mobile-inline-block { display: block; }
+    .bagi.desktop {
+        display: block !important;
+        width: 100% !important;
+    }
 
     .popupWrapper .popup {
         left: 5%;right: 5%;

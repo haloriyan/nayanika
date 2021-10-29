@@ -1,8 +1,8 @@
 <div class="tinggi-160"></div>
 
-<section class="footer">
+<section class="footer font-reg">
     @isset($customContent)
-        <div class="customContent">
+        <div class="customContent font-reg">
             {!! $customContent !!}
         </div>
     @endisset
@@ -11,7 +11,7 @@
             <div class="logo">
                 <img src="{{ asset('images/logo.png') }}">
             </div>
-            <div><i class="fas fa-copyright"></i> {{ date('Y') }} NAYANIKA WORK</div>
+            <div><i class="fa fa-copyright"></i> {{ date('Y') }} NAYANIKA WORK</div>
         </div>
         <div class="bagi bagi-3 footer_b">
             <pre>{!! $writings['footer 1'] !!}</pre>

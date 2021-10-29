@@ -1,9 +1,42 @@
 body {
     background-color: #000;
     color: #fff;
+    font-family: GrotesqueSemiBold;
 }
 
+a { text-decoration: none !important; }
+.capitalize { text-transform: uppercase; }
+.hamburgerMenu {
+    display: inline-block;
+    position: relative;
+}
+.hamburgerMenu div {
+    height: 2px;
+    width: 32px;
+    position: relative;
+    top: 18px;
+    margin-bottom: 8px;
+    background-color: #fff;
+}
+.hamburgerMenu.active div:nth-child(3) {
+    display: none;
+}
+.hamburgerMenu.active div:nth-child(1) {
+    transform: rotateZ(45deg);
+}
+.hamburgerMenu.active div:nth-child(2) {
+    transform: rotateZ(-45deg);
+    margin-top: -10px;
+}
 
+.font-reg {
+    font-family: Grotesque !important;
+}
+pre { font-family: Grotesque !important; }
+
+.tagline {
+    font-size: 105px !important;
+}
 .judul {
     font-size: 60px !important;
 }
@@ -12,6 +45,7 @@ body {
 }
 .deskripsi {
     font-size: 20px !important;
+    font-family: Grotesque;
 }
 
 .header {
@@ -50,7 +84,7 @@ body {
     border: 1px solid #fff;
     border-radius: 90px;
     height: 40px;
-    padding: 0px 15px;
+    padding: 0px 10px;
     line-height: 20px;
 }
 .header nav button {
@@ -69,7 +103,7 @@ body {
 
 .content {
     position: absolute;
-    top: 200px;left: 5%;right: 5%;
+    top: 220px;left: 5%;right: 5%;
 }
 .content h3 {
     font-size: 40px;
@@ -135,7 +169,7 @@ section.portfolio #items .item .tags,.category-item {
     margin: -2px;
     border: 1px solid #fff;
     font-size: 15px;
-    padding: 6px 15px;
+    padding: 5px 10px;
     margin-top: 15px;
     margin-right: 10px;
     border-radius: 900px;
@@ -162,9 +196,8 @@ button:hover {
 }
 
 section.cta button {
-    font-size: 45px;
-    height: 125px;
-    padding: 0px 80px;
+    height: 120px;
+    padding: 0px 20px;
 }
 
 section.footer {
@@ -259,6 +292,9 @@ nav.main-menu a:hover {
     font-size: 12px;
     position: relative;
     top: -2px;
+}
+.custicon-2 {
+    font-size: 22px;
 }
 
 @media (max-width: 480px) {

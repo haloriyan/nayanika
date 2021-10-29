@@ -13,7 +13,7 @@
         transition: 0.4s;
     }
     input.box {
-        background-color: #111;
+        background-color: #000;
         color: #fff;
         height: 40px;
         box-shadow: none !important;
@@ -24,7 +24,7 @@
     }
     input.box.custom-lightMode {
         background-color: #fff;
-        color: #111;
+        color: #000;
         border: 1px solid #ddd;
     }
     button.custom {

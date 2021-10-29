@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="aboveTheFold">
-    <h2>TURNING YOUR IDEAS INTO MAGNIFICENT VISUALS</h2>
+    <h2 class="tagline mb-4">TURNING YOUR IDEAS <br />INTO MAGNIFICENT VISUALS</h2>
     <div class="desktop">
         <section class="footer">
             <div class="bagi bagi-3">
@@ -39,17 +39,18 @@
     <h3 class="judul">OUR WORK</h3>
     <div id="items">
         <div id="loadPortfolio"></div>
-        
         <br />
         <div class="item"></div>
         <div class="item">
-            <h4 class="pointer garis-bawah" id="loadMore" onclick="loadMore()">
+            <h4 class="pointer sub-judul garis-bawah" id="loadMore" onclick="loadMore()">
                 Load More
             </h4>
-            <h4 class="pointer d-none garis-bawah" id="toPortfolio">
-                <a href="{{ route('user.portfolio') }}">
-                    All Work <span class="icon-external-link-black custicon"></span>
-                </a>
+            <h4 class="pointer sub-judul d-none garis-bawah" id="toPortfolio">
+                <div class="border-bottom-2 d-inline-block">
+                    <a href="{{ route('user.portfolio') }}">
+                        All Work <span class="icon-external-link-black custicon custicon-2"></span>
+                    </a>
+                </div>
             </h4>
         </div>
     </div>
@@ -58,17 +59,24 @@
 <div class="tinggi-160"></div>
 <section class="service">
     <div class="bagi bagi-2">
-        <h3>WHAT WE DO</h3>
-        <p class="lebar-80">{{ $writings['service'] }}</p>
+        <h3 class="judul">WHAT WE DO</h3>
+        <p class="lebar-80 deskripsi">{{ $writings['service'] }}.
+            <span class="border-bottom">
+                <a href="{{ route('user.service') }}">
+                    SHOW MORE
+                    <span class="icon-external-link-black custicon"></span>
+                </a>
+            </span>
+        </p>
     </div>
     <div class="bagi bagi-2" id="items">
         @foreach ($categories as $category)
-            <h3 class="mt-0">{{ $category->name }}</h3>
+            <h3 class="mt-0 sub-judul">{{ $category->name }}</h3>
             @foreach ($category->services as $service)
                 <div class="bagi bagi-4">
                     <div class="wrap">
-                        <div class="containerList squarize" style="height: 150px;">
-                            <div class="item">{{ $service->name }}</div>
+                        <div class="containerList squarize rounded-more" style="height: 150px;">
+                            <div class="item capitalize  teks-kecil deskripsi">{{ $service->name }}</div>
                         </div>
                     </div>
                 </div>
@@ -76,8 +84,8 @@
             <a href="{{ route('user.service') }}">
                 <div class="bagi bagi-4">
                     <div class="wrap">
-                        <div class="containerList" style="height: 150px;">
-                            <div class="item">SHOW MORE <br /> <i class="fas fa-external-link-alt"></i></div>
+                        <div class="containerList squarize rounded-more" style="height: 150px;">
+                            <div class="item garis-bawah teks-kecil deskripsi">SHOW MORE <span class="icon-external-link-black custicon"></span></div>
                         </div>
                     </div>
                 </div>
@@ -113,28 +121,13 @@
                     createElement({
                         el: "div",
                         attributes: [
-                            ['class', 'portfolio-item']
+                            ['class', 'portfolio-item item mb-4 pb-4']
                         ],
-                        html: `<div class="bagi bagi-2 desktop">
-        <div class="wrap ml-0">
-            <a href="{{ route('user.portfolio.detail') }}/${portfolio.id}">
-                <div class="cover squarize rectangle rounded" bg-image="{{ asset('storage/portfolio_images') }}/${portfolio.featured_image}"></div>
-            </a>
-        </div>
-    </div>
-    <div class="bagi bagi-2 desktop detail">
-        <div class="ml-0 p-4">
-            <a href="{{ route('user.portfolio.detail') }}/${portfolio.id}">
-                <h3 class="sub-judul">${portfolio.title}
-                    <div class="custicon ke-kanan mt-1" size="30" icon="external-link-white"></div>
-                </h3>
-                <p>${portfolio.description}</p>
-            </a>
-            <div id="categoriesArea${portfolio.id}"></div>
-        </div>
-    </div>
-    <br />
-    <hr size="1" color="#fff" />`,
+                        html: `<div class="wrap small">
+    <div class="cover rounded-more squarize rectangle" bg-image="{{ asset('storage/portfolio_images') }}/${portfolio.featured_image}"></div>
+    <h3 class="sub-judul font-reg mb-0 mt-1">${portfolio.title}</h3>
+    <div id="categoriesArea${portfolio.id}"></div>
+</div>`,
                         createTo: '#loadPortfolio'
                     });
 
@@ -145,7 +138,7 @@
                             attributes: [
                                 ['href', `{{ route('user.portfolio') }}?category=${category}`]
                             ],
-                            html: `<div class="category-item">${category}</div>`,
+                            html: `<div class="font-reg category-item">${category}</div>`,
                             createTo: `#categoriesArea${portfolio.id}`
                         });
                     });

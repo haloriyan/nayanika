@@ -6,6 +6,7 @@
     <title>@yield('title') {{ env('APP_NAME') }}</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('fa/css/all.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset ('fonts/custicon/css/nayanika.css') }}">
     <link rel="stylesheet" href="{{ asset('css/page.css') }}">
     @yield('head.dependencies')
@@ -20,12 +21,14 @@
     </div>
     <nav>
         <a href="{{ route('user.contact') }}">
-            <button class="item">
-                Get in Touch
+            <button class="item font-reg">
+                Get in touch
             </button>
         </a>
-        <div class="item" id="menuBtn" onclick="toggleMenu(this)">
-            <i class="fas fa-bars"></i>
+        <div class="item hamburgerMenu" id="menuBtn" onclick="toggleMenu(this)">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
         </div>
     </nav>
 </header>
@@ -88,15 +91,15 @@
     const toggleMenu = btn => {
         if (state.isMenuShowed) {
             mainMenu.style.display = "none";
-            btn.innerHTML = "<i class='fas fa-bars'></i>";
         } else {
             mainMenu.style.display = "block";
-            btn.innerHTML = "<i class='fas fa-times'></i>";
         }
         state.isMenuShowed = !state.isMenuShowed;
+        btn.classList.toggle('active')
     }
 
     const toggleLightMode = (isInit = null) => {
+        console.log('toggling color...');
         let colorButton = select("#colorModeButton");
         if (isInit != 1) {
             state.lightMode = !state.lightMode;
