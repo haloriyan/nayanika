@@ -99,7 +99,6 @@
     }
 
     const toggleLightMode = (isInit = null) => {
-        console.log('toggling color...');
         let colorButton = select("#colorModeButton");
         if (isInit != 1) {
             state.lightMode = !state.lightMode;
@@ -127,6 +126,10 @@
                 custicon.setAttribute('bg-image', '{{ asset("images/external-link-white.png") }}');
             });
             selectAll("input").forEach(input => input.classList.remove('custom-lightMode'));
+            selectAll(".hamburgerMenu div").forEach(item => {
+                console.log("aah")
+                item.style.backgroundColor = "#fff";
+            });
             colorButton.classList.add('dark')
             colorButton.innerHTML = "<i class='fas fa-moon'></i>";
         } else {
@@ -151,6 +154,10 @@
                 custicon.setAttribute('bg-image', '{{ asset("images/external-link-black.png") }}');
             });
             selectAll("input").forEach(input => input.classList.add('custom-lightMode'));
+            selectAll(".hamburgerMenu div").forEach(item => {
+                console.log("aah")
+                item.style.backgroundColor = "#000";
+            });
             colorButton.classList.remove('dark')
             colorButton.innerHTML = "<i class='fas fa-sun'></i>";
         }
