@@ -108,7 +108,7 @@
                     for (let i = 0; i < 2; i++) {
                         displayDescription += desc[i] + " ";
                     }
-                    displayDescription += `show more <div class="custicon" size="10" icon="external-link-white"></div>`;
+                    displayDescription += `<span class="garis-bawah">SHOW MORE <span class="icon-external-link-black custicon"></span></span>`;
                 } else {
                     displayDescription += description;
                 }
