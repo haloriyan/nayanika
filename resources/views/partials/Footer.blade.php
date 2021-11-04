@@ -18,7 +18,7 @@
         <div class="bagi bagi-3 footer_b">
             <pre>{!! $writings['footer 1'] !!}</pre>
         </div>
-        <div class="bagi bagi-3 footer_c">
+        <div class="bagi bagi-3 footer_c rata-kanan">
             <pre>{!! $writings['footer 2'] !!}</pre>
         </div>
     </div>
@@ -29,11 +29,11 @@
             </div>
             <div><i class="fas fa-copyright"></i> {{ date('Y') }} NAYANIKA WORK</div>
         </div>
-        <div class="bagi bagi-2">
+        <div class="bagi bagi-2 rata-kanan">
             <div class="footer_b">
                 <pre>{!! $writings['footer 1'] !!}</pre>
             </div>
-            <div class="footer_c">
+            <div class="footer_c ">
                 <pre>{!! $writings['footer 2'] !!}</pre>
             </div>
         </div>

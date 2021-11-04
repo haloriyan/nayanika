@@ -588,6 +588,7 @@ table td form { display: inline-block; }
 .mobile { display: none; }
 .desktop { display: block; }
 .bagi.desktop { display: inline-block; }
+.bagi.mobile { display: block !important;width: 100% !important; }
 
 .overflowAuto { overflow: auto; }
 
@@ -634,6 +635,7 @@ input[type=file].withPreview {
         display: block !important;
         width: 100% !important;
     }
+    .bagi.mobile { display: inline-block; }
 
     .popupWrapper .popup {
         left: 5%;right: 5%;

@@ -13,6 +13,7 @@
     @yield('head.dependencies')
 </head>
 <body>
+<input type="hidden" id="routeID" value="{{ Route::currentRouteName() }}">
 
 <header class="header">
     <div class="logo">
@@ -56,6 +57,7 @@
     } else if (state.lightMode == "true") {
         state.lightMode = true;
     }
+    let routeID = select("#routeID").value;
 
     const squarize = () => {
         let doms = selectAll(".squarize");
@@ -184,6 +186,12 @@
             dom.setAttribute('bg-image', `{{ asset('images/${icon}.png') }}`)
         });
         bindDivWithImage();
+    }
+
+    if (routeID != 'user.contact') {
+        if (screen.width <= 480) {
+            select(".footer .mobile .footer_b").remove();
+        }
     }
 </script>
 @yield('javascript')

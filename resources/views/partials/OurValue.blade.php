@@ -5,12 +5,16 @@
     <div class="bagi bagi-2">
         <p class="deskripsi">
             {{ $writings['value'] }}.
-            <span class="border-bottom d-inline-block">
-                <a href="{{ route('user.about') }}">
-                    SHOW MORE
-                    <span class="icon-external-link-black custicon"></span>
-                </a>
-            </span>
+            @if (isset($notUsingShowMore))
+                {{--  --}}
+            @else 
+                <span class="border-bottom d-inline-block">
+                    <a href="{{ route('user.about') }}">
+                        SHOW MORE
+                        <span class="icon-external-link-black custicon"></span>
+                    </a>
+                </span>
+            @endif
         </p>
     </div>
 

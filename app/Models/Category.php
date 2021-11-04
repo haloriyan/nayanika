@@ -14,6 +14,6 @@ class Category extends Model
     ];
 
     public function services() {
-        return $this->hasMany('App\Models\Service', 'category_id');
+        return $this->hasMany('App\Models\Service', 'category_id')->orderBy('updated_at', 'DESC');
     }
 }

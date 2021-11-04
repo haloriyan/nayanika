@@ -105,11 +105,11 @@
                 let description = portfolio.description;
                 let desc = description.split(" ");
                 let displayDescription = "";
-                if (desc.length > 2) {
+                if (desc.length > 25) {
                     for (let i = 0; i < 2; i++) {
                         displayDescription += desc[i] + " ";
                     }
-                    displayDescription += `<span class="garis-bawah">SHOW MORE <span class="icon-external-link-black custicon"></span></span>`;
+                    // displayDescription += `<span class="garis-bawah">SHOW MORE <span class="icon-external-link-black custicon"></span></span>`;
                 } else {
                     displayDescription += description;
                 }

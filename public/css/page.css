@@ -304,6 +304,13 @@ nav.main-menu a:hover {
 }
 
 @media (max-width: 480px) {
+    section.footer .customContent {
+        text-align: center;
+        font-size: 52px;
+        line-height: 60px;
+        font-family: GrotesqueSemiBold;
+    }
+    .custicon { font-size: 7px; }
     .tagline {
         font-size: 52px !important;
     }
@@ -387,10 +394,11 @@ nav.main-menu a:hover {
         word-break: break-all;
     }
 
+    section.footer { padding-bottom: 150px; }
     section.footer,
     section.footer pre {
-        font-size: 20px;
-        line-height: 30px;
+        font-size: 15px;
+        line-height: 20px;
     }
     section.footer .logo img {
         height: 30px;

@@ -60,7 +60,7 @@ class AdminController extends Controller
     public function service() {
         $myData = self::me();
         $message = Session::get('message');
-        $services = ServiceController::get()->get();
+        $services = ServiceController::get()->orderBy('updated_at', 'DESC')->get();
         $categories = CategoryController::get()->get();
         
         return view('admin.service', [
