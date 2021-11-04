@@ -24,6 +24,7 @@
     .portfolio-item .cover { height: 350px; }
     .portfolio-item .detail h3 {
         margin-bottom: 0px;
+        font-family: GrotesqueSemiBold !important;
     }
 
     @media (max-width: 480px) {

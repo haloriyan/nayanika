@@ -13,7 +13,7 @@
             <a href="{{ route('user.service') }}">
                 <li>WHAT WE DO</li>
             </a>
-            <a href="{{ route('user.service') }}">
+            <a href="{{ route('user.contact') }}">
                 <li class="mobile">GET IN TOUCH</li>
             </a>
         </ol>

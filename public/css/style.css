@@ -20,7 +20,7 @@
 }
 @font-face {
     font-family: GrotesqueSemiBold;
-    src: url(../fonts/Darker_Grotesque/DarkerGrotesque-SemiBold.ttf);
+    src: url(../fonts/Darker_Grotesque/DarkerGrotesque-SemiBold.otf);
 }
 @font-face {
     font-family: GrotesqueLight;
@@ -32,7 +32,7 @@
 }
 @font-face {
     font-family: Grotesque;
-    src: url(../fonts/Darker_Grotesque/DarkerGrotesque-Regular.ttf);
+    src: url(../fonts/Darker_Grotesque/DarkerGrotesque-Regular.otf);
 }
 
 body {
@@ -47,7 +47,7 @@ body {
 .wrap.small { margin: 2%; }
 .bag-10 > .wrap { margin: 3.5% 5%; }
 h1,h2,h3,h4,h5,h6 {
-    font-family: GrotesqueLight;
+    font-family: GrotesqueSemiBold;
     color: #666;
 }
 a { text-decoration: none;color: var(--firstColor); }

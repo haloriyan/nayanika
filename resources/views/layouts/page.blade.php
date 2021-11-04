@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset ('fonts/custicon/css/nayanika.css') }}">
     <link rel="stylesheet" href="{{ asset('css/page.css') }}">
+    <link rel="icon" href="{{ asset('favicon-white.ico') }}">
     @yield('head.dependencies')
 </head>
 <body>
@@ -100,12 +101,15 @@
 
     const toggleLightMode = (isInit = null) => {
         let colorButton = select("#colorModeButton");
+        let favicon = select("link[rel='icon']");
+
         if (isInit != 1) {
             state.lightMode = !state.lightMode;
             console.log(`State setted to ${state.lightMode}`);
         }
         if (state.lightMode) {
             // to night
+            favicon.href = '{{ asset("favicon-black.ico") }}';
             select("header .logo img").setAttribute('src', "{{ asset('images/logo.png') }}");
             select(".footer .logo img").setAttribute('src', "{{ asset('images/logo.png') }}");
             select("body").style.backgroundColor = "#000";
@@ -127,13 +131,13 @@
             });
             selectAll("input").forEach(input => input.classList.remove('custom-lightMode'));
             selectAll(".hamburgerMenu div").forEach(item => {
-                console.log("aah")
                 item.style.backgroundColor = "#fff";
             });
             colorButton.classList.add('dark')
             colorButton.innerHTML = "<i class='fas fa-moon'></i>";
         } else {
             // to light
+            favicon.href = '{{ asset("favicon-white.ico") }}';
             select("header .logo img").setAttribute('src', "{{ asset('images/logo-black.png') }}");
             select(".footer .logo img").setAttribute('src', "{{ asset('images/logo-black.png') }}");
             select("body").style.backgroundColor = "#fff";
@@ -155,7 +159,6 @@
             });
             selectAll("input").forEach(input => input.classList.add('custom-lightMode'));
             selectAll(".hamburgerMenu div").forEach(item => {
-                console.log("aah")
                 item.style.backgroundColor = "#000";
             });
             colorButton.classList.remove('dark')

@@ -3,7 +3,9 @@
 <section class="footer font-reg">
     @isset($customContent)
         <div class="customContent font-reg">
-            {!! $customContent !!}
+            <a href="{{ route('user.service') }}">
+                {!! $customContent !!}
+            </a>
         </div>
     @endisset
     <div class="desktop">

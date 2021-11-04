@@ -124,9 +124,11 @@
                             ['class', 'portfolio-item item mb-4 pb-4']
                         ],
                         html: `<div class="wrap small">
-    <div class="cover rounded-more squarize rectangle" bg-image="{{ asset('storage/portfolio_images') }}/${portfolio.featured_image}"></div>
-    <h3 class="sub-judul font-reg mb-0 mt-1">${portfolio.title}</h3>
-    <div id="categoriesArea${portfolio.id}"></div>
+    <a href="{{ route('user.portfolio.detail') }}/${portfolio.id}">
+        <div class="cover rounded-more squarize rectangle" bg-image="{{ asset('storage/portfolio_images') }}/${portfolio.featured_image}"></div>
+        <h3 class="sub-judul font-reg mb-0 mt-1">${portfolio.title}</h3>
+        <div id="categoriesArea${portfolio.id}"></div>
+    </a>
 </div>`,
                         createTo: '#loadPortfolio'
                     });

@@ -31,17 +31,17 @@
 
 <div class="tinggi-60"></div>
 <div class="bagi bagi-2 desktop">
-    <h3 class="mt-0">ABOUT</h3>
+    <h3 class="mt-0 judul">ABOUT</h3>
 </div>
 <div class="bagi bagi-2 desktop">
-    <div class="teks-besar">{{ $portfolio->description }}</div>
+    <div class="deskripsi">{{ $portfolio->description }}</div>
 </div>
 
 <div class="tinggi-60"></div>
 
 @isset($portfolio->images[0])
 <div class="bagi bagi-2">
-    <div class="wrap">
+    <div class="wrap ml-0">
         <div class="cover squarize rectangle rounded" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[0]->filename) }}"></div>
     </div>
 </div>
@@ -49,7 +49,7 @@
 
 @isset($portfolio->images[1])
 <div class="bagi bagi-2">
-    <div class="wrap">
+    <div class="wrap mr-0">
         <div class="cover squarize rectangle rounded" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[1]->filename) }}"></div>
     </div>
 </div>
@@ -57,10 +57,10 @@
 
 <div class="tinggi-60"></div>
 <div class="bagi bagi-2 desktop">
-    <h3 class="mt-0">PROBLEM & SOLVE</h3>
+    <h3 class="mt-0 judul">TASK</h3>
 </div>
 <div class="bagi bagi-2 desktop">
-    <div class="teks-besar">{{ $portfolio->task }}</div>
+    <div class="deskripsi">{{ $portfolio->task }}</div>
 </div>
 
 <div class="tinggi-60"></div>
@@ -69,10 +69,14 @@
     @php
         $images = json_decode(json_encode($portfolio->images));
         array_splice($images, 0, 2);
+        $i = 1;
     @endphp
     @foreach ($images as $image)
+        @php
+            $isEven = $i++ % 2;
+        @endphp
         <div class="item">
-            <div class="wrap">
+            <div class="wrap {{ $isEven == 0 ? 'mr-0' : 'ml-0' }}">
                 <img src="{{ asset('storage/portfolio_images/'.$image->filename) }}" class="lebar-100 rounded">
             </div>
         </div>

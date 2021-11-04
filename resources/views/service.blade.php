@@ -42,12 +42,12 @@
     }
     .service-item .containerList.selected,
     .alacarte-item.selected {
-        background-color: #2ecc71 !important;
-        color: #fff !important;
+        background-color: #fff !important;
+        color: #000 !important;
     }
     .service-item .containerList.selected .item {
-        background-color: #2ecc71 !important;
-        color: #fff !important;
+        background-color: #fff !important;
+        color: #000 !important;
     }
     @media (max-width: 480px) {
         .service-item {
@@ -63,12 +63,12 @@
 </div>
 
 @foreach ($categories as $category)
-    <h3 class="mt-0">{{ $category->name }}</h3>
+    <h3 class="mt-0 judul">{{ $category->name }}</h3>
     @foreach ($category->services as $service)
         <div class="bagi bagi-6 service-item">
             <div class="wrap">
-                <div class="containerList" onclick="selectService(this)">
-                    <div class="item">{{ $service->name }}</div>
+                <div class="containerList squarize rounded-more" onclick="selectService(this)">
+                    <div class="item teks-kecil deskripsi">{{ strtoupper($service->name) }}</div>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
 <div class="tinggi-40"></div>
 
 @foreach ($services as $service)
-    <div class="alacarte-item pointer" onclick="chooseAlacarte(this)">{{ $service->name }}</div>
+    <div class="alacarte-item pointer" onclick="chooseAlacarte(this)">{{ strtoupper($service->name) }}</div>
 @endforeach
 
 <div class="tinggi-60"></div>
@@ -138,7 +138,10 @@
                 </div>
             </div>
         </div>
-        <button class="mt-2 custom">SEND <i class="fas fa-angle-double-right"></i></button>
+
+        <div class="garis-bawah mt-3 pointer bagi" onclick="kirim()">
+            SEND <span class="icon-external-link-black custicon"></span>
+        </div>
     </form>
 </div>
 
@@ -178,6 +181,10 @@
     
     if (select("#notifStatus").value != "") {
         scrollKe("#orderForm");
+    }
+
+    const kirim = () => {
+        select("#orderForm").submit();
     }
 </script>
 @endsection

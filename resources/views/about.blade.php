@@ -20,7 +20,7 @@
         <p>{{ $writings['about'] }}</p>
 
         <button>
-            #DOMagnificent
+            #DoMagnificent
         </button>
     </div>
 </section>

@@ -52,9 +52,9 @@ pre { font-family: Grotesque !important; }
     position: fixed;
     top: 40px;left: 0px;right: 0px;
     background-color: #000;
-    z-index: 2;
     transition: 0.4s;
     padding-bottom: 20px;
+    z-index: 10;
 }
 .header.stick {
     top: 0px;
@@ -206,6 +206,7 @@ section.footer {
     padding-bottom: 60px;
     font-size: 25px;
 }
+section.footer a { text-decoration: underline !important; }
 section.footer .logo { margin-bottom: 60px; }
 section.footer .logo img {
     height: 40px;
@@ -220,7 +221,7 @@ nav.main-menu {
     position: fixed;
     top: 120px;left: 0px;right: 0px;bottom: 0px;
     background-color: #000;
-    z-index: 1;
+    z-index: 10;
     transition: 0.4s;
     display: none;
 }
@@ -281,6 +282,7 @@ nav.main-menu a:hover {
     color: #fff !important;
     border: 1px solid #000 !important;
     cursor: pointer;
+    z-index: 10;
 }
 #colorModeButton.dark {
     background-color: #fff !important;
@@ -296,8 +298,26 @@ nav.main-menu a:hover {
 .custicon-2 {
     font-size: 22px;
 }
+.custicon-3 {
+    font-size: 50px;
+    top: -6px;
+}
 
 @media (max-width: 480px) {
+    .tagline {
+        font-size: 52px !important;
+    }
+    .judul {
+        font-size: 30px !important;
+    }
+    .sub-judul {
+        font-size: 22px !important;
+    }
+    .deskripsi {
+        font-size: 12px !important;
+        font-family: Grotesque;
+    }
+
     .header .logo img {
         height: 25px;
     }
@@ -308,6 +328,7 @@ nav.main-menu a:hover {
     .header nav button {
         margin-right: 0px !important;
     }
+    .header nav #GITbtn { display: none; }
     nav.main-menu ol {
         padding: 0px;
     }
@@ -360,7 +381,6 @@ nav.main-menu a:hover {
 
     .containerList {
         font-size: 14px;
-        height: 100px !important;
     }
     .containerList .item {
         flex: 0 220 auto;
