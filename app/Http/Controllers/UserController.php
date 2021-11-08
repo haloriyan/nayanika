@@ -48,6 +48,15 @@ class UserController extends Controller
         $categories = CategoryController::get()->get();
         $portfolios = PortfolioController::get($filter)->orderBy('created_at', 'DESC')->get();
 
+        foreach ($portfolios as $porto) {
+            $cats = explode(",", $porto->categories);
+            foreach ($categories as $cat) {
+                if (in_array($cat->name, $cats)) {
+                    $cat->portfolio_count += 1;
+                }
+            }
+        }
+
         return view('portfolio', [
             'writings' => $this->writings,
             'portfolios' => $portfolios,

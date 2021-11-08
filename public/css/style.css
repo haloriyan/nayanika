@@ -212,7 +212,7 @@ button {
     transition: 0.4s;
     font-size: 17px;
     background: none;
-    font-family: GrotesqueBold;
+    font-family: GrotesqueSemiBold;
     color: #1976d2;
 }
 button.disabled { cursor: not-allowed; }

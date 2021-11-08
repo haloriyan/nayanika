@@ -176,6 +176,12 @@ section.portfolio #items .item .tags,.category-item {
     text-transform: uppercase;
 }
 
+.service-item .item {
+    box-sizing: border-box;
+}
+.service-item .text {
+    vertical-align: middle;
+}
 /* section.service #items .item {
     border: 1px solid #fff;
     text-align: center;
@@ -195,9 +201,10 @@ button:hover {
     color: #000;
 }
 
-section.cta button {
-    height: 120px;
-    padding: 0px 20px;
+section.cta .button .text {
+    position: relative;
+    top: -10px;
+    background: none !important;
 }
 
 section.footer {
@@ -257,7 +264,6 @@ nav.main-menu a:hover {
     align-items: center;
     border: 1px solid #fff;
     border-radius: 7px;
-    font-size: 25px;
     text-align: center;
     height: 180px;
     cursor: pointer;
@@ -268,6 +274,7 @@ nav.main-menu a:hover {
 }
 .containerList .item {
     flex: 0 0 120px;
+    word-break: keep-all;
 }
 
 #colorModeButton {
