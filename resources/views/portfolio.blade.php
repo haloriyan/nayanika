@@ -8,16 +8,27 @@
         border: none;
         padding-bottom: 0px;
     }
+    .category-menu {
+        position: absolute;
+        z-index: 4;
+        background: none !important;
+    }
     .category-menu li {
         float: left;
         list-style: none;
         font-size: 20px;
-        margin-top: 20px;
+        margin-top: 50px;
         margin-right: 25px;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
     }
     .category-menu li.active {
-        border-bottom: 2px solid #fff;
+        border-bottom: 3px solid #fff;
+    }
+    .category-menu .categoryCounter {
+        display: inline-block;
+        font-size: 16px;
+        position: relative;
+        top: -8px;left: -4px;
     }
     .portfolio-item p { font-size: 20px; }
     .portfolio-item a { text-decoration: none; }
@@ -25,6 +36,12 @@
     .portfolio-item .detail h3 {
         margin-bottom: 0px;
         font-family: GrotesqueSemiBold !important;
+    }
+
+    .topSeparator {
+        position: relative;
+        top: -20px;
+        margin-top: -20px;
     }
 
     @media (max-width: 480px) {
@@ -52,7 +69,7 @@
 </div>
 <div class="tinggi-40"></div>
 <div class="bagi bagi-2 desktop">
-    <h3 class="mt-0 title">PROJECTS</h3>
+    <h3 class="mt-0 judul">PROJECTS</h3>
 </div>
 <div class="bagi bagi-2 desktop">
     <div class="category-menu ml-4">
@@ -61,14 +78,13 @@
         </a>
         @foreach ($categories as $category)
             <a href="{{ route('user.portfolio', ['category' => $category->name]) }}">
-                <li class="{{ $request->category == $category->name ? 'active' : '' }}">{{ $category->name }}</li>
+                <li class="{{ $request->category == $category->name ? 'active' : '' }}">{{ $category->name }} <div class="categoryCounter">{{ $category->portfolio_count }}</div></li>
             </a>
         @endforeach
     </div>
 </div>
 <div class="tinggi-100 mobile"></div>
-<hr size="1" color="#fff" />
-<div class="tinggi-20"></div>
+<hr size="1" color="#aaa" class="topSeparator" />
 
 <div id="loadArea"></div>
 
@@ -105,8 +121,8 @@
                 let description = portfolio.description;
                 let desc = description.split(" ");
                 let displayDescription = "";
-                if (desc.length > 25) {
-                    for (let i = 0; i < 2; i++) {
+                if (desc.length > 29) {
+                    for (let i = 0; i < 29; i++) {
                         displayDescription += desc[i] + " ";
                     }
                     // displayDescription += `<span class="garis-bawah">SHOW MORE <span class="icon-external-link-black custicon"></span></span>`;

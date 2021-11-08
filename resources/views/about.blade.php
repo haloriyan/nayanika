@@ -21,12 +21,12 @@
     <h2>ABOUT US</h2>
 </div>
 
-<section class="rata-tengah">
+<section class="rata-tengah border-top pt-4">
     <div class="bagi lebar-70">
-        <h3 style="margin-top: 0px" class="mb-2">{{ $writings['tagline'] }}</h3>
-        <p>{{ $writings['about'] }}</p>
+        <h3 style="margin-top: 0px" class="mb-2 judul">{{ $writings['tagline'] }}</h3>
+        <p class="deskripsi">{{ $writings['about'] }}</p>
 
-        <button id="cta">
+        <button id="cta" class="mt-2">
             #DoMagnificent
         </button>
     </div>

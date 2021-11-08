@@ -36,7 +36,7 @@
             <div class="bagi bagi-3 footer_b">
                 <pre>{!! $writings['footer 1'] !!}</pre>
             </div>
-            <div class="bagi bagi-3 footer_c">
+            <div class="bagi bagi-3 footer_c rata-kanan">
                 <pre>{!! $writings['footer 2'] !!}</pre>
             </div>
         </section>

@@ -13,10 +13,13 @@
             <div class="logo">
                 <img src="{{ asset('images/logo.png') }}">
             </div>
-            <div><i class="fa fa-copyright"></i> {{ date('Y') }} NAYANIKA WORK</div>
+            <div class="tinggi-60"></div>
+            <div>COPYRIGHT NAYANIKA WORK {{ date('Y') }}</div>
         </div>
-        <div class="bagi bagi-3 footer_b">
-            <pre>{!! $writings['footer 1'] !!}</pre>
+        <div class="bagi bagi-3 footer_b rata-tengah">
+            <div class="bagi rata-kiri">
+                <pre>{!! $writings['footer 1'] !!}</pre>
+            </div>
         </div>
         <div class="bagi bagi-3 footer_c rata-kanan">
             <pre>{!! $writings['footer 2'] !!}</pre>
@@ -27,7 +30,6 @@
             <div class="logo">
                 <img src="{{ asset('images/logo.png') }}">
             </div>
-            <div><i class="fas fa-copyright"></i> {{ date('Y') }} NAYANIKA WORK</div>
         </div>
         <div class="bagi bagi-2 rata-kanan">
             <div class="footer_b">
@@ -37,5 +39,6 @@
                 <pre>{!! $writings['footer 2'] !!}</pre>
             </div>
         </div>
+        <div class="bagi" style="position: relative;top: -15px;">COPYRIGHT NAYANIKA WORK {{ date('Y') }}</div>
     </div>
 </section>

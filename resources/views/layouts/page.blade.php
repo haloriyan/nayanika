@@ -6,7 +6,6 @@
     <title>@yield('title') {{ env('APP_NAME') }}</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('fa/css/all.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset ('fonts/custicon/css/nayanika.css') }}">
     <link rel="stylesheet" href="{{ asset('css/page.css') }}">
     <link rel="icon" href="{{ asset('favicon-white.ico') }}">
@@ -50,6 +49,7 @@
     let mainMenu = select("nav.main-menu");
     let state = {
         lightMode: localStorage.getItem('lightMode'),
+        headerCanScroll: true,
         isMenuShowed: false
     }
     if (state.lightMode == null || state.lightMode == "false") {
@@ -72,6 +72,8 @@
             } else {
                 if (classes.contains('use-lineHeight')) {
                     dom.style.lineHeight = computedStyle.width;
+                } else if (classes.contains('use-padding')) {
+                    // 
                 } else {
                     dom.style.height = computedStyle.width;
                 }
@@ -82,12 +84,14 @@
 
     window.addEventListener('scroll', e => {
         let pos = this.scrollY;
-        if (pos > 50) {
-            header.classList.add("stick");
-            mainMenu.classList.add("stick");
-        } else {
-            header.classList.remove("stick");
-            mainMenu.classList.remove("stick");
+        if (state.headerCanScroll) {
+            if (pos > 50) {
+                header.classList.add("stick");
+                mainMenu.classList.add("stick");
+            } else {
+                header.classList.remove("stick");
+                mainMenu.classList.remove("stick");
+            }
         }
     });
 

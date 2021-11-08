@@ -27,6 +27,11 @@
         color: #000;
         border: 1px solid #ddd;
     }
+    .sendBtn span {
+        transform: rotateZ(90deg);
+        position: relative;
+        top: 1px;left: 5px;
+    }
     button.custom {
         border-radius: 0px;
         border: none;
@@ -67,7 +72,7 @@
     @foreach ($category->services as $service)
         <div class="bagi bagi-6 service-item">
             <div class="wrap">
-                <div class="containerList squarize rounded-more" onclick="selectService(this)">
+                <div class="containerList mb-1 squarize rounded-more" onclick="selectService(this)" style="padding: 5px">
                     <div class="item teks-kecil deskripsi">{{ strtoupper($service->name) }}</div>
                 </div>
             </div>
@@ -139,8 +144,10 @@
             </div>
         </div>
 
-        <div class="garis-bawah mt-3 pointer bagi" onclick="kirim()">
-            SEND <span class="icon-external-link-black custicon"></span>
+        <div class="wrap super" style="margin-top: 0px;">
+            <div class="garis-bawah mt-3 sendBtn pointer bagi" onclick="kirim()">
+                SEND <span class="icon-external-link-black custicon"></span>
+            </div>
         </div>
     </form>
 </div>
