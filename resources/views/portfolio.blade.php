@@ -62,6 +62,7 @@
         .portfolio-item .detail .wrapper {
             padding: 20px 0px;
         }
+        h3.judul { margin-bottom: 0px; }
 
         .topSeparator { top: 10px; }
     }
@@ -104,7 +105,7 @@
     </div>
 </div>
 <div class="mobile rata-tengah">
-    <div class="ml-1 garis-bawah deskripsi pointer loadMoreBtn" onclick="loadMore(this)">
+    <div class="ml-1 garis-bawah pointer loadMoreBtn" onclick="loadMore(this)" style="font-size: 14px;">
         SHOW MORE <span class="icon-external-link-black custicon rotateToBottom"></span>
     </div>
 </div>
@@ -157,7 +158,7 @@
         <div class="ml-0 p-4 wrapper">
             <a href="{{ route('user.portfolio.detail') }}/${portfolio.id}">
                 <h3>${portfolio.title}
-                    <div class="custicon ke-kanan mt-1" size="30" icon="external-link-white"></div>
+                    <span class="ke-kanan icon-external-link-black custicon custicon-judul mt-1"></span>
                 </h3>
                 <p>${displayDescription}</p>
             </a>

@@ -325,12 +325,14 @@ span.rotateToBottom {
         font-family: GrotesqueSemiBold;
     }
     .custicon { font-size: 7px; }
+    .custicon-2 { font-size: 12px; }
     .tagline {
         font-size: 52px !important;
     }
     .judul {
         font-size: 30px !important;
     }
+    .custicon-judul { font-size: 20px !important; }
     .sub-judul {
         font-size: 22px !important;
     }
@@ -350,6 +352,7 @@ span.rotateToBottom {
         margin-right: 0px !important;
     }
     .header nav #GITbtn { display: none; }
+    nav.main-menu { top: 95px; }
     nav.main-menu ol {
         padding: 0px;
     }
@@ -413,6 +416,9 @@ span.rotateToBottom {
     section.footer pre {
         font-size: 15px;
         line-height: 20px;
+    }
+    section.footer div {
+        font-size: 16px;
     }
     section.footer .logo img {
         height: 25px !important;

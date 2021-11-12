@@ -589,6 +589,7 @@ table td form { display: inline-block; }
 .desktop { display: block; }
 .bagi.desktop { display: inline-block; }
 .bagi.mobile { display: block !important;width: 100% !important; }
+.bagi.both { display: inline-block !important; }
 
 .overflowAuto { overflow: auto; }
 

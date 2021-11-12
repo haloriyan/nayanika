@@ -153,7 +153,7 @@
         </div>
         <div class="mobile rata-tengah">
             <div class="garis-bawah mt-3 sendBtn pointer bagi" onclick="kirim()">
-                SEND <span class="icon-external-link-black custicon"></span>
+                SEND <span class="icon-external-link-black custicon custicon-2 rotateToBottom"></span>
             </div>
         </div>
     </form>

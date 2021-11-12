@@ -45,8 +45,8 @@
         <section class="footer">
             <div class="bagi bagi-2 footer_a">
                 <div class="lebar-90">
-                    <div style="margin-top: -13px">#DoMagnificent</div>
-                    <pre>{!! $writings['footer 1'] !!}</pre>
+                    <div style="margin-top: -10px">#DoMagnificent</div>
+                    <pre style="margin-top: 11px;">{!! $writings['footer 1'] !!}</pre>
                 </div>
             </div>
             <div class="bagi bagi-2 footer_b rata-kanan">
@@ -56,7 +56,7 @@
     </div>
 </div>
 
-<div class="tinggi-160"></div>
+<div class="tinggi-160 desktop"></div>
 @include('partials/OurValue')
 
 <div class="tinggi-160"></div>
@@ -65,8 +65,8 @@
     <div id="items">
         <div id="loadPortfolio"></div>
         <br />
-        <div class="item desktop"></div>
-        <div class="item p-0">
+        <div class="bagi bagi-2"></div>
+        <div class="bagi bagi-2 pl-2 mt-2">
             <h4 class="pointer m-0 sub-judul garis-bawah" id="loadMore" onclick="loadMore()" style="margin-top: -30px;">
                 Load More
             </h4>
@@ -103,7 +103,7 @@
                 <div class="bagi bagi-4">
                     <div class="wrap">
                         <div class="containerList squarize rounded-more" style="height: 150px;">
-                            <div class="item garis-bawah teks-kecil deskripsi">SHOW <div class="mobile"></div> MORE <span class="icon-external-link-black custicon"></span></div>
+                            <div class="item garis-bawah teks-kecil deskripsi">SHOW <br /> MORE <span class="icon-external-link-black custicon"></span></div>
                         </div>
                     </div>
                 </div>
