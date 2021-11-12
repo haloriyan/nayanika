@@ -13,6 +13,11 @@
         height: 40px;
         font-size: 20px;
     }
+    @media (max-width: 480px) {
+        .desc .lebar-70 {
+            width: 90%;
+        }
+    }
 </style>
 @endsection
 
@@ -21,7 +26,7 @@
     <h2>ABOUT US</h2>
 </div>
 
-<section class="rata-tengah border-top pt-4">
+<section class="rata-tengah desc border-top pt-4">
     <div class="bagi lebar-70">
         <h3 style="margin-top: 0px" class="mb-2 judul">{{ $writings['tagline'] }}</h3>
         <p class="deskripsi">{{ $writings['about'] }}</p>

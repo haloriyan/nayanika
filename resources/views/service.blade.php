@@ -144,7 +144,14 @@
             </div>
         </div>
 
-        <div class="wrap super" style="margin-top: 0px;">
+        <div class="desktop">
+            <div class="wrap super" style="margin-top: 0px;">
+                <div class="garis-bawah mt-3 sendBtn pointer bagi" onclick="kirim()">
+                    SEND <span class="icon-external-link-black custicon"></span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile rata-tengah">
             <div class="garis-bawah mt-3 sendBtn pointer bagi" onclick="kirim()">
                 SEND <span class="icon-external-link-black custicon"></span>
             </div>

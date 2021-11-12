@@ -213,10 +213,10 @@ section.footer {
     padding-bottom: 60px;
     font-size: 25px;
 }
-section.footer a { text-decoration: underline !important; }
+section.footer a { text-decoration: none !important; }
 section.footer .logo { margin-bottom: 60px; }
 section.footer .logo img {
-    height: 40px;
+    height: 40px !important;
 }
 section.footer pre {
     font-size: 25px;
@@ -299,6 +299,7 @@ nav.main-menu a:hover {
 .custicon {
     display: inline-block;
     font-size: 12px;
+    background: none !important;
     position: relative;
     top: -2px;
 }
@@ -308,6 +309,12 @@ nav.main-menu a:hover {
 .custicon-3 {
     font-size: 50px;
     top: -6px;
+}
+
+span.rotateToBottom {
+    transform: rotateZ(90deg);
+    position: relative;
+    top: 1px;left: 5px;
 }
 
 @media (max-width: 480px) {
@@ -408,13 +415,11 @@ nav.main-menu a:hover {
         line-height: 20px;
     }
     section.footer .logo img {
-        height: 30px;
+        height: 25px !important;
     }
 
-    section.cta button {
-        font-size: 25px;
-        height: 80px;
-        padding: 0px 40px;
+    section.cta .button .text {
+        top: -5px;
     }
 
     .category-menu {

@@ -39,6 +39,7 @@
                 <pre>{!! $writings['footer 2'] !!}</pre>
             </div>
         </div>
+        <br /><br />
         <div class="bagi" style="position: relative;top: -15px;">COPYRIGHT NAYANIKA WORK {{ date('Y') }}</div>
     </div>
 </section>

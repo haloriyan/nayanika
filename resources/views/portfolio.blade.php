@@ -59,6 +59,11 @@
         .portfolio-item h3 { font-size: 30px; }
         .portfolio-item p { font-size: 18px; }
         .portfolio-item .wrap { margin: 0% !important; }
+        .portfolio-item .detail .wrapper {
+            padding: 20px 0px;
+        }
+
+        .topSeparator { top: 10px; }
     }
 </style>
 @endsection
@@ -84,15 +89,24 @@
     </div>
 </div>
 <div class="tinggi-100 mobile"></div>
-<hr size="1" color="#aaa" class="topSeparator" />
+<hr size="1" color="#888" class="topSeparator" />
 
 <div id="loadArea"></div>
 
-<div class="bagi bagi-2"></div>
-<div class="bagi bagi-2">
-    <button class="mt-3 ml-5" id="loadMore" onclick="loadMore()">
-        LOAD MORE
-    </button>
+<div class="desktop">
+    <div class="bagi bagi-2"></div>
+    <div class="bagi bagi-2">
+        <div class="wrap">
+            <div class="ml-1 border-bottom d-inline-block deskripsi pointer loadMoreBtn" onclick="loadMore(this)">
+                SHOW MORE <span class="icon-external-link-black custicon rotateToBottom"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mobile rata-tengah">
+    <div class="ml-1 garis-bawah deskripsi pointer loadMoreBtn" onclick="loadMore(this)">
+        SHOW MORE <span class="icon-external-link-black custicon rotateToBottom"></span>
+    </div>
 </div>
 
 @include('./partials/CTA')
@@ -101,28 +115,24 @@
 
 @section('javascript')
 <script>
-    let toLoad = 5;
+    let toLoad = 3;
     let loadedDataId = [];
     let url = new URL(document.URL);
     let category = url.searchParams.get('category');
 
-    const load = () => {
+    const load = (customCallback = null) => {
         let req = post("{{ route('api.portfolio.load') }}", {
             count: toLoad,
             category: category
         })
         .then(res => {
             let datas = res.datas;
-            if (datas.length < toLoad) {
-                console.log(datas);
-                select("#loadMore").classList.add('d-none');
-            }
             datas.forEach(portfolio => {
                 let description = portfolio.description;
                 let desc = description.split(" ");
                 let displayDescription = "";
-                if (desc.length > 29) {
-                    for (let i = 0; i < 29; i++) {
+                if (desc.length > 35) {
+                    for (let i = 0; i < 35; i++) {
                         displayDescription += desc[i] + " ";
                     }
                     // displayDescription += `<span class="garis-bawah">SHOW MORE <span class="icon-external-link-black custicon"></span></span>`;
@@ -144,7 +154,7 @@
         </div>
     </div>
     <div class="bagi bagi-2 detail">
-        <div class="ml-0 p-4">
+        <div class="ml-0 p-4 wrapper">
             <a href="{{ route('user.portfolio.detail') }}/${portfolio.id}">
                 <h3>${portfolio.title}
                     <div class="custicon ke-kanan mt-1" size="30" icon="external-link-white"></div>
@@ -155,7 +165,7 @@
         </div>
     </div>
     <br />
-    <hr size="1" color="#fff" />`,
+    <hr size="1" color="#888" />`,
                         createTo: '#loadArea'
                     });
 
@@ -170,19 +180,32 @@
                             createTo: `#categoriesArea${portfolio.id}`
                         });
                     });
+                    loadedDataId.push(portfolio.id);
                 }
-                loadedDataId.push(portfolio.id);
             });
             bindDivWithImage();
             squarize();
             custicon();
             toggleLightMode(1);
+
+            if (customCallback != null) {
+                customCallback();
+            }
         });
     }
     load();
-    const loadMore = () => {
-        toLoad += 5;
-        load();
+    const loadMore = (btn) => {
+        btn.innerHTML = "<i class='fas fa-spinner'></i> loading...";
+        toLoad += 3;
+        load(() => {
+            if (loadedDataId.length < toLoad) {
+                btn.remove();
+            } else {
+                console.log(`loaded : ${loadedDataId.length}`);
+                console.log(`toLoad : ${toLoad}`);
+                btn.innerHTML = `SHOW MORE <span class="icon-external-link-black custicon rotateToBottom"></span>`;
+            }
+        });
     }
 </script>
 @endsection

@@ -41,16 +41,16 @@
 
 @isset($portfolio->images[0])
 <div class="bagi bagi-2">
-    <div class="wrap ml-0">
-        <div class="cover squarize rectangle rounded" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[0]->filename) }}"></div>
+    <div class="wrap ml-0" style="margin-right: 2%;">
+        <div class="cover squarize rectangle rounded-more" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[0]->filename) }}"></div>
     </div>
 </div>
 @endif
 
 @isset($portfolio->images[1])
 <div class="bagi bagi-2">
-    <div class="wrap mr-0">
-        <div class="cover squarize rectangle rounded" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[1]->filename) }}"></div>
+    <div class="wrap mr-0" style="margin-left: 2%;">
+        <div class="cover squarize rectangle rounded-more" bg-image="{{ asset('storage/portfolio_images/'.$portfolio->images[1]->filename) }}"></div>
     </div>
 </div>
 @endif

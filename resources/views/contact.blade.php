@@ -64,9 +64,10 @@
 
         let footerA = select("section.footer .mobile .footer_a");
         let footerLogo = select(".footer .mobile .footer_a .logo");
+        console.log(footerA);
         footerA.remove();
         footerLogo.remove();
-        footerA.style.marginTop = "10px";
+        footerA.style.marginTop = "120px";
         
         let footerB = select(".footer .mobile .footer_b");
         let footerBContent = footerB.childNodes[1].innerHTML.split("Jl")[1];
